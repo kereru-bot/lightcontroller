@@ -93,10 +93,16 @@ class LightControllerClient {
 					blue = Integer.parseInt(parts[3]);
 				} else if(parts[0].compareTo("brightness") == 0) {
 					brightness = Integer.parseInt(parts[1]);
-				} else if(parts[0].compareTo("save") == 0) {
+					//not really a good command atm
+					//need to think of better solution
+				}
+				 else if(parts[0].compareTo("save") == 0) {
 					saveConfig(red, green, blue, brightness);
 					return true;
-				}
+				} else if(parts[0].compareTo("on") == 0) {
+					 command = "rgb" + " " + red + " " + green + " " + blue;
+				 }
+
 			} catch(Exception ex) {
 				System.out.println("Exception: " + ex);
 				return false;

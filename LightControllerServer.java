@@ -40,11 +40,13 @@ class LightControllerServer {
 				while(true) {
 					String command = reader.readLine(); // reads in a command from the client
 					System.out.println(command);
-					String[] parts = command.split(" ");
+
 					//client must've closed connection
 					if(command == null) {
 						break;
 					}
+
+					String[] parts = command.split(" ");
 
 					if(command.compareTo("on") == 0) {
 						//builder = new ProcessBuilder("sudo","on","test.py");
